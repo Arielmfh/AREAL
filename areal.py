@@ -44,7 +44,9 @@ def arealTrekant(grunnlinje, hoyde):
 # Funksjon for å beregne arealet av et parallellogram skrives her. Funsjonen skal ta imot to parameter (g og h)
 # Funksjonen skal returnere arealet
 # Utvikler 1 har ansvaret for å lage denne funksjonen
-
+def arealParallellogram(grunnlinje, hoyde):
+    areal = grunnlinje * hoyde
+    return areal
 
 # Funksjon for å beregne arealet av en rombe skrives her. Funsjonen skal ta imot to parameter (g og h)
 # Funksjonen skal returnere arealet
@@ -87,10 +89,18 @@ while ans != "8":
     elif ans=="3":
         clear()
         print("\nHer beregnes arealet av en trekant") 
+        grunnlinje = int(input("Hva er grunnlinjen til trekanten? (cm) "))
+        hoyde = int(input("Hva er høyden til trekanten? (cm) "))
+        areal = arealTrekant(grunnlinje, hoyde)
+        print("Arealet til trekanten er", areal,"cm²")
         venter=input("Trykk ENTER for å fortsette!") 
     elif ans=="4":
         clear()
         print("\nHer beregnes arealet av et parallellogram")
+        grunnlinje = int(input("Hva er grunnlinjen til parallellogramen? (cm) "))
+        hoyde = int(input("Hva er høyden til parallellogramen? (cm) "))
+        areal = arealParallellogram(grunnlinje, hoyde)
+        print("Arealet til parallellogramen er", areal,"cm²")
         venter=input("Trykk ENTER for å fortsette!") 
     elif ans=="5":
         clear()
