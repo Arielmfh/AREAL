@@ -51,17 +51,23 @@ def arealParallellogram(grunnlinje, hoyde):
 # Funksjon for å beregne arealet av en rombe skrives her. Funsjonen skal ta imot to parameter (g og h)
 # Funksjonen skal returnere arealet
 # Utvikler 2 har ansvaret for å lage denne funksjonen
-
+def areal_rombe(L, B):
+    A = L * B
+    return A
 
 # Funksjon for å beregne arealet av en trapes skrives her. Funsjonen skal ta imot tre parameter (a, b og h)
 # Funksjonen skal returnere arealet
 # Utvikler 2 har ansvaret for å lage denne funksjonen
-
+def areal_trapes(a, b, høyde):
+    A = a + b * høyde / 2
+    return A
 
 # Funksjon for å beregne arealet av en sirkel skrives her. Funsjonen skal ta imot et parameter (r)
 # Funksjonen skal returnere arealet
 # Utvikler 2 har ansvaret for å lage denne funksjonen
-
+def areal_sirkel(radius):
+    A = 3.14 * radius * 2
+    return A
    
 
 # Programmet starter her
@@ -105,14 +111,26 @@ while ans != "8":
     elif ans=="5":
         clear()
         print("\nHer beregnes arealet av en rombe")
+        grunnlinje = int(input("Hva er grunnlinjen til romben? (cm) "))
+        hoyde = int(input("Hva er høyden til romben? (cm) "))
+        areal = areal_rombe(grunnlinje, hoyde)
+        print("Arealet til Rombe er", areal,"cm²")
         venter=input("Trykk ENTER for å fortsette!") 
     elif ans=="6":
         clear()
         print("\nHer beregnes arealet av en trapes")
+        a = int(input("Hva er a til trapes? (cm) "))
+        b = int(input("Hva er b til trapes? (cm) "))
+        hoyde = int(input("Hva er høyden til trapes? (cm) "))
+        areal = areal_trapes(a, b, hoyde)
+        print("Arealet til trapes er", areal,"cm²")
         venter=input("Trykk ENTER for å fortsette!")         
     elif ans=="7":
         clear()
         print("\nHer beregnes arealet av en sirkel")
+        radius = int(input("Hva er radius til sirkel? (cm) "))
+        areal = areal_sirkel(radius)
+        print("Arealet til sirkelen er", areal,"cm²")
         venter=input("Trykk ENTER for å fortsette!") 
     
 print("\nTakk for at du brukte areal-programmet! Velkommen igjen!\n")          
