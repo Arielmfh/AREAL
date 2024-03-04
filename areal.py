@@ -20,22 +20,25 @@ def skriv_meny():
 # Funksjon for å beregne arealet av et kvadrat skrives her. Funsjonen skal ta imot et parameter (s)
 # Funksjonen skal returnere arealet
 # Utvikler 1 har ansvaret for å lage denne funksjonen
-def arealKvadrat(a): 
-     areal = a * a
+def arealKvadrat(side): 
+     areal = side * side
      return areal
 
 
 # Funksjon for å beregne arealet av et rektangel skrives her. Funsjonen skal ta imot to parameter (g og h)
 # Funksjonen skal returnere arealet
 # Utvikler 1 har ansvaret for å lage denne funksjonen
-def arealRektangel(g, h):
-    areal = g * h
+def arealRektangel(grunnlinje, hoyde):
+    areal = grunnlinje * hoyde
     return areal
 
 
 # Funksjon for å beregne arealet av en trekant skrives her. Funsjonen skal ta imot to parameter (g og h)
 # Funksjonen skal returnere arealet
 # Utvikler 1 har ansvaret for å lage denne funksjonen
+def arealTrekant(grunnlinje, hoyde):
+    areal = grunnlinje * hoyde / 2
+    return areal
 
 
 # Funksjon for å beregne arealet av et parallellogram skrives her. Funsjonen skal ta imot to parameter (g og h)
@@ -68,32 +71,38 @@ while ans != "8":
     ans=input("Hva ønsker du å gjøre. Velg tall? ") 
     if ans=="1":
         clear()
-        print("\nHer bergnes arealet av et kvadrat")
-
+        print("\nHer beregnes arealet av et kvadrat")
+        side = int(input("Hva er lengden til sidene? (cm) "))
+        areal = arealKvadrat(side)
+        print("Arealet til kvadraten er",areal,"cm²")
         venter=input("Trykk ENTER for å fortsette!")    
     elif ans=="2":
         clear()
-        print("\nHer bergnes arealet av et rektangel")
+        print("\nHer beregnes arealet av et rektangel")
+        grunnlinje = int(input("Hva er grunnlinjen til rektangelen? (cm) "))
+        hoyde = int(input("Hva er høyden til rektangelen? (cm) "))
+        areal = arealRektangel(grunnlinje, hoyde)
+        print("Arealet til rektangelen er", areal,"cm²")
         venter=input("Trykk ENTER for å fortsette!") 
     elif ans=="3":
         clear()
-        print("\nHer bergnes arealet av en trekant") 
+        print("\nHer beregnes arealet av en trekant") 
         venter=input("Trykk ENTER for å fortsette!") 
     elif ans=="4":
         clear()
-        print("\nHer bergnes arealet av et parallellogram")
+        print("\nHer beregnes arealet av et parallellogram")
         venter=input("Trykk ENTER for å fortsette!") 
     elif ans=="5":
         clear()
-        print("\nHer bergnes arealet av en rombe")
+        print("\nHer beregnes arealet av en rombe")
         venter=input("Trykk ENTER for å fortsette!") 
     elif ans=="6":
         clear()
-        print("\nHer bergnes arealet av en trapes")
+        print("\nHer beregnes arealet av en trapes")
         venter=input("Trykk ENTER for å fortsette!")         
     elif ans=="7":
         clear()
-        print("\nHer bergnes arealet av en sirkel")
+        print("\nHer beregnes arealet av en sirkel")
         venter=input("Trykk ENTER for å fortsette!") 
     
 print("\nTakk for at du brukte areal-programmet! Velkommen igjen!\n")          
